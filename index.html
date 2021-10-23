@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>JS Test</title>
+        <link rel="stylesheet" type="text/css" href="public/styles/modal-helper.css">
+        <script src="public/scripts/modal-helper.js"></script>
+    </head>
+    <body>
+        <button id="trigger" type="button">
+            Click Me
+        </button>
+        <br />
+        <br />
+        <br />
+        <span id="message"></span>
+
+        <script>
+            var modal = new Modal({
+                source: "trigger",
+                message: "Are you sure you want to continue?",
+                onConfirm: function () {
+                    var text = document.getElementById("message");
+                    text.innerHTML = "You just clicked 'Yes'"
+                },
+                onCancel: function () {
+                    var text = document.getElementById("message");
+                    text.innerHTML = "You just clicked 'Cancel'"
+                },
+            })
+        </script>
+    </body>    
+</html>
